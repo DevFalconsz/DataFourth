@@ -21,4 +21,16 @@ O projeto 'DataOlegario' consiste na criação de um banco de dados compartilhad
 │
 ├── README.md                         # Descrição geral do projeto e instruções de uso
 └── LICENSE                           # Arquivo de licença do projeto
-
+```
+## Modo de organização dos cabeçalhos:
+Para garantir que o arquivo main.c possa utilizar os cabeçalhos (*.h) localizados na pasta lib, você deve especificar o caminho completo para cada cabeçalho na inclusão no seu código. Aqui está como você deve prosseguir:
+```c
+#include "../lib/cliente.h"                 // Inclusão do cabeçalho da entidade Cliente
+#include "../lib/pedido.h"                  // Inclusão do cabeçalho da entidade Pedido
+#include "../lib/itens.h"                   // Inclusão do cabeçalho da entidade Itens
+#include "../lib/atendente.h"               // Inclusão do cabeçalho da entidade Atendente
+#include "../lib/fornecedor.h"              // Inclusão do cabeçalho da entidade Fornecedor
+#include "../lib/produto.h"                 // Inclusão do cabeçalho da entidade Produto
+#include "../lib/produto_fornecedor.h"      // Inclusão do cabeçalho da entidade Produto_Fornecedor
+#include "../lib/pedido_atendente.h"        // Inclusão do cabeçalho da entidade Pedido_Atendente
+```
