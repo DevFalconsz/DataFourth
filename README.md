@@ -19,6 +19,9 @@ O projeto 'DataOlegario' consiste na criação de um banco de dados compartilhad
 │   ├── produto_fornecedor.h          # Cabeçalho da entidade Produto_Fornecedor
 │   └── pedido_atendente.h            # Cabeçalho da entidade Pedido_Atendente
 │
+├── /sql
+│   └── create.sql                    # Código de criação do banco de dados para testes unitários
+│
 ├── README.md                         # Descrição geral do projeto e instruções de uso
 └── LICENSE                           # Arquivo de licença do projeto
 ```
