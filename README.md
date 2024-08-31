@@ -6,7 +6,7 @@ O projeto 'DataOlegario' consiste na criação de um banco de dados compartilhad
 ```bash
 /public
 │
-├── /source
+├── /src
 │   └── main.c                        # Programa principal que integra todas os cabeçalhos
 │
 ├── /lib
