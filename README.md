@@ -37,3 +37,7 @@ Para garantir que o arquivo main.c possa utilizar os cabeçalhos (*.h) localizad
 #include "../lib/produto_fornecedor.h"      // Inclusão do cabeçalho da entidade Produto_Fornecedor
 #include "../lib/pedido_atendente.h"        // Inclusão do cabeçalho da entidade Pedido_Atendente
 ```
+## Imagem original do protótipo:
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5229393d-2404-4ed4-ab85-249a85586270" alt="Descrição da Imagem">
+</p>
