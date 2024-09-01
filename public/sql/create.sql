@@ -1,3 +1,5 @@
+CREATE DATABASE datafourth;
+
 -- Tabela Cliente
 CREATE TABLE Cliente (
     cpf_cnpj VARCHAR(20) PRIMARY KEY,
