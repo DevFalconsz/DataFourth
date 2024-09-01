@@ -1,5 +1,5 @@
 # DataFourth
-O projeto 'DataOlegario' consiste na criação de um banco de dados compartilhado para consolidar e organizar todo o conteúdo da disciplina ministrada pelo professor Olegário.
+O projeto 'DataFourth' consiste na criação de um banco de dados compartilhado para consolidar e organizar todo o conteúdo da disciplina ministrada pelo professor Olegário.
 
 
 ## Organização do projeto:
