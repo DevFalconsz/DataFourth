@@ -16,7 +16,7 @@ typedef struct {
 } Item;
 
 PGconn *connectDB() {
-    const char *conninfo = "dbname=datafourth user=devfalconsz password=TheFalconsz hostaddr=127.0.0.1 port=5432";
+    const char *conninfo = "dbname=datafourth user=postgres password=ueg2024 hostaddr=10.150.1.220 port=5432";
     PGconn *conn = PQconnectdb(conninfo);
 
     if (PQstatus(conn) != CONNECTION_OK) {
