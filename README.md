@@ -41,3 +41,12 @@ Para garantir que o arquivo main.c possa utilizar os cabeçalhos (*.h) localizad
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5229393d-2404-4ed4-ab85-249a85586270" alt="Descrição da Imagem">
 </p>
+
+## Lista de Usuários e Permissões no Banco de Dados:
+
+```markdown
+| Usuário     | Permissões                             | Objetivos                                         |
+|-------------|----------------------------------------|---------------------------------------------------|
+| `postgres`  | Superuser, Create role, Create DB      | Administrador geral do banco de dados.            |
+| `itens_user`| CRUD itens, Connect DB                 | Desenvolvimento de novos bancos de dados.         |
+```
