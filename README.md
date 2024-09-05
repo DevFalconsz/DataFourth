@@ -48,5 +48,5 @@ Para garantir que o arquivo main.c possa utilizar os cabeçalhos (*.h) localizad
 | Usuário     | Permissões                             | Objetivos                                         |
 |-------------|----------------------------------------|---------------------------------------------------|
 | `postgres`  | Superuser, Create role, Create DB      | Administrador geral do banco de dados.            |
-| `itens_user`| CRUD itens, Connect DB                 | Desenvolvimento de novos bancos de dados.         |
+| `itens_user`| CRUD itens, Connect DB                 | CRUD geral da tabela itens.                       |
 ```
