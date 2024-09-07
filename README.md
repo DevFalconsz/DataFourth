@@ -45,8 +45,9 @@ Para garantir que o arquivo main.c possa utilizar os cabeçalhos (*.h) localizad
 ## Lista de Usuários e Permissões no Banco de Dados:
 
 ```markdown
-| Usuário     | Permissões                             | Objetivos                                         |
-|-------------|----------------------------------------|---------------------------------------------------|
-| `postgres`  | Superuser, Create role, Create DB      | Administrador geral do banco de dados.            |
-| `itens_user`| CRUD itens, Connect DB                 | CRUD geral da tabela itens.                       |
+| Usuário         | Permissões                             | Objetivos                                         |
+|-----------------|----------------------------------------|---------------------------------------------------|
+| `postgres`      | Superuser, Create role, Create DB      | Administrador geral do banco de dados.            |
+| `itens_user`    | CRUD itens, Connect DB                 | CRUD geral da tabela itens.                       |
+| `usuario_pedido`| CRUD pedidos, Connect DB               | CRUD geral da tabela pedidos.                     |
 ```
