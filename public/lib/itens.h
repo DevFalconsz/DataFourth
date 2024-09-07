@@ -97,27 +97,79 @@ void deleteItem(PGconn *conn, int num_item) {
     PQclear(res);
 }
 
-int main() {
+void painel() {
+    printf("  _____   _                        \n");
+    printf(" |_   _| | |                       \n");
+    printf("   | |   | |_    ___   _ __    ___ \n");
+    printf("   | |   | __|  / _ \\ | '_ \\  / __|\n");
+    printf("  _| |_  | |_  |  __/ | | | | \\__ \\\n");
+    printf(" |_____|  \\__|  \\___| |_| |_| |___/\n");
+    printf("                                   \n");
+    printf("                                   \n");
+    
     PGconn *conn = connectDB();
+    
+    int escolha;
+    Item item;
+    int num_item;
 
-    Item newItem = {1, 1, 1, 10, 15.50, 155.00};
-    createItem(conn, newItem);
+    while (1) {
+        printf("\nEscolha uma operação:\n");
+        printf("1. Inserir Item\n");
+        printf("2. Listar Itens\n");
+        printf("3. Atualizar Item\n");
+        printf("4. Deletar Item\n");
+        printf("5. Sair\n");
+        printf("Opção: ");
+        scanf("%d", &escolha);
 
-    printf("\nItens após inserção:\n");
-    readItems(conn);
-
-    newItem.quantidade = 20;
-    newItem.valor_total_item = 310.00;
-    updateItem(conn, 1, newItem);
-
-    printf("\nItens após atualização:\n");
-    readItems(conn);
-
-    deleteItem(conn, 1);
-
-    printf("\nItens após exclusão:\n");
-    readItems(conn);
-
-    PQfinish(conn);
-    return 0;
+        switch (escolha) {
+            case 1:
+                printf("Inserir novo item:\n");
+                printf("Num Item: ");
+                scanf("%d", &item.num_item);
+                printf("ID Pedido: ");
+                scanf("%d", &item.id_pedido);
+                printf("ID Produto: ");
+                scanf("%d", &item.id_produto);
+                printf("Quantidade: ");
+                scanf("%d", &item.quantidade);
+                printf("Valor Unitário: ");
+                scanf("%f", &item.valor_unitario);
+                item.valor_total_item = item.quantidade * item.valor_unitario;
+                createItem(conn, item);
+                break;
+            case 2:
+                printf("Itens cadastrados:\n");
+                readItems(conn);
+                break;
+            case 3:
+                printf("Atualizar item:\n");
+                printf("Num Item: ");
+                scanf("%d", &num_item);
+                printf("Novo ID Pedido: ");
+                scanf("%d", &item.id_pedido);
+                printf("Novo ID Produto: ");
+                scanf("%d", &item.id_produto);
+                printf("Nova Quantidade: ");
+                scanf("%d", &item.quantidade);
+                printf("Novo Valor Unitário: ");
+                scanf("%f", &item.valor_unitario);
+                item.valor_total_item = item.quantidade * item.valor_unitario;
+                updateItem(conn, num_item, item);
+                break;
+            case 4:
+                printf("Deletar item:\n");
+                printf("Num Item: ");
+                scanf("%d", &num_item);
+                deleteItem(conn, num_item);
+                break;
+            case 5:
+                PQfinish(conn);
+                printf("Saindo...\n");
+                return;
+            default:
+                printf("Opção inválida!\n");
+        }
+    }
 }
