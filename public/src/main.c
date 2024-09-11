@@ -15,16 +15,6 @@ int main() {
     int escolha;
     char terminal[50];
 
-    printf("Digite o terminal que você deseja acessar para o banco de dados (por exemplo: psql): ");
-    fgets(terminal, sizeof(terminal), stdin);
-    
-    size_t length = strlen(terminal);
-    if (terminal[length - 1] == '\n') {
-        terminal[length - 1] = '\0';
-    }
-
-    printf("Você escolheu acessar o banco de dados usando: %s\n", terminal);
-
     printf("\nEscolha o painel que você deseja acessar:\n");
     printf("1. Painel de Itens\n");
     printf("2. Painel de Cliente\n");
