@@ -97,7 +97,7 @@ void deleteItem(PGconn *conn, int num_item) {
     PQclear(res);
 }
 
-void painel() {
+void itens_painel() {
     printf("  _____   _                        \n");
     printf(" |_   _| | |                       \n");
     printf("   | |   | |_    ___   _ __    ___ \n");
