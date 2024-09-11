@@ -119,7 +119,7 @@ void itens_painel() {
         printf("2. Listar Itens\n");
         printf("3. Atualizar Item\n");
         printf("4. Deletar Item\n");
-        printf("5. Sair\n");
+        printf("5. Voltar ao menu principal\n");  // Alterado para "Voltar"
         printf("Opção: ");
         scanf("%d", &escolha);
 
@@ -165,9 +165,9 @@ void itens_painel() {
                 deleteItem(conn, num_item);
                 break;
             case 5:
-                PQfinish(conn);
-                printf("Saindo...\n");
-                return;
+                PQfinish(conn);  // Fecha a conexão com o banco de dados
+                printf("Voltando ao menu principal...\n");
+                return;  // Retorna ao `main`
             default:
                 printf("Opção inválida!\n");
         }
