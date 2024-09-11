@@ -13,7 +13,14 @@
 
 int main() {
     int escolha;
-    char terminal[50];
+    char terminal[50] = "psql";
+    
+    size_t length = strlen(terminal);
+    if (terminal[length - 1] == '\n') {
+        terminal[length - 1] = '\0';
+    }
+
+    printf("Você escolheu acessar o banco de dados usando: %s\n", terminal);
 
     printf("\nEscolha o painel que você deseja acessar:\n");
     printf("1. Painel de Itens\n");
