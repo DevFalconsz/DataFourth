@@ -8,7 +8,7 @@ CREATE TABLE Cliente (
 
 -- Tabela Atendente
 CREATE TABLE Atendente (
-    id_atendente INT PRIMARY KEY,
+    id_atendente INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL
 );
 
