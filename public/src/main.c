@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../lib/itens.h"
+#include "../lib/cliente.c"
+#include "../lib/atendente.c"
 
-// #include "../lib/cliente.h"
 // #include "../lib/pedido.h"
-// #include "../lib/atendente.h"
 // #include "../lib/fornecedor.h"
 // #include "../lib/produto.h"
 // #include "../lib/produto_fornecedor.h"
@@ -50,6 +50,8 @@ int main() {
 
     printf("Você escolheu acessar o banco de dados usando: %s\n", terminal);
 
+    conectarBanco();
+
     // Loop para manter o menu principal ativo até o usuário sair
     while (1) {
 
@@ -80,13 +82,16 @@ int main() {
                 itens_painel();  // Chama o painel de Itens
                 break;
             case 2:
-                cliente_painel();  // Painel de Cliente
+                cliente_painel();
+                conectarBanco();
+                exibirMenu();
+                desconectarBanco();  // Painel de Cliente
                 break;
             case 3:
                 pedido_painel();  // Painel de Pedido
                 break;
             case 4:
-                atendente_painel();  // Painel de Atendente
+                menuAtendente();
                 break;
             case 5:
                 fornecedor_painel();  // Painel de Fornecedor
