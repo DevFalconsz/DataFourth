@@ -6,9 +6,12 @@
 #include "../lib/atendente.c"
 
 // #include "../lib/pedido.h"
-// #include "../lib/fornecedor.h"
-// #include "../lib/produto.h"
-// #include "../lib/produto_fornecedor.h"
+#include "../lib/fornecedor_header.h"
+#include "../lib/menu_fornecedor.c"
+#include "../lib/menu_produto.c"
+#include "../lib/common.h"
+#include "../lib/common.c"
+#include "../lib/menu_produto_fornecedor.c"
 // #include "../lib/pedido_atendente.h"
 
 void cliente_painel() {
@@ -55,7 +58,7 @@ int main() {
     // Loop para manter o menu principal ativo até o usuário sair
     while (1) {
 
-        printf(" ___  ___                 \n");
+        printf("___  ___                 \n");
         printf("|  \\/  |                 \n");
         printf("| .  . | ___ _ __  _   _  \n");
         printf("| |\\/| |/ _ \\ '_ \\| | | | \n");
@@ -94,13 +97,16 @@ int main() {
                 menuAtendente();
                 break;
             case 5:
-                fornecedor_painel();  // Painel de Fornecedor
+                fornecedor_painel();
+                painel_fornecedor(); // Painel de Fornecedor
                 break;
             case 6:
-                produto_painel();  // Painel de Produto
+                produto_painel();
+                painel_produto();  // Painel de Produto
                 break;
             case 7:
-                produto_fornecedor_painel();  // Painel de Produto_Fornecedor
+                produto_fornecedor_painel();
+                painel_produto_fornecedor();  // Painel de Produto_Fornecedor
                 break;
             case 8:
                 pedido_atendente_painel();  // Painel de Pedido_Atendente
