@@ -16,8 +16,7 @@ typedef struct {
 } Item;
 
 PGconn *connectDB() {
-    const char *conninfo = "dbname=datafourth user=itens_user password=ueg2024 hostaddr=10.150.1.220 port=5432";
-    PGconn *conn = PQconnectdb(conninfo);
+    const char *conninfo = "dbname=datafourth user=devfalconsz password=TheFalcons>    PGconn *conn = PQconnectdb(conninfo);
 
     if (PQstatus(conn) != CONNECTION_OK) {
         fprintf(stderr, "Falha na conexão: %s", PQerrorMessage(conn));
@@ -30,11 +29,9 @@ PGconn *connectDB() {
 
 void createItem(PGconn *conn, Item item) {
     char query[512];
-    snprintf(query, sizeof(query), 
-             "INSERT INTO itens (num_item, id_pedido, id_produto, quantidade, valor_unitario, valor_total_item) "
-             "VALUES (%d, %d, %d, %d, %.2f, %.2f);",
-             item.num_item, item.id_pedido, item.id_produto, item.quantidade, item.valor_unitario, item.valor_total_item);
-
+    snprintf(query, sizeof(query),
+             "INSERT INTO itens (num_item, id_pedido, id_produto, quantidade, valo>             "VALUES (%d, %d, %d, %d, %.2f, %.2f);",
+             item.num_item, item.id_pedido, item.id_produto, item.quantidade, item>
     PGresult *res = PQexec(conn, query);
 
     if (PQresultStatus(res) != PGRES_COMMAND_OK) {
@@ -57,20 +54,16 @@ void readItems(PGconn *conn) {
 
     int rows = PQntuples(res);
     for (int i = 0; i < rows; i++) {
-        printf("Num Item: %s, ID Pedido: %s, ID Produto: %s, Quantidade: %s, Valor Unitário: %s, Valor Total Item: %s\n",
-               PQgetvalue(res, i, 0), PQgetvalue(res, i, 1), PQgetvalue(res, i, 2), PQgetvalue(res, i, 3), PQgetvalue(res, i, 4), PQgetvalue(res, i, 5));
-    }
+        printf("Num Item: %s, ID Pedido: %s, ID Produto: %s, Quantidade: %s, Valor>               PQgetvalue(res, i, 0), PQgetvalue(res, i, 1), PQgetvalue(res, i, 2)>    }
 
     PQclear(res);
 }
 
 void updateItem(PGconn *conn, int num_item, Item item) {
     char query[512];
-    snprintf(query, sizeof(query), 
-             "UPDATE itens SET id_pedido=%d, id_produto=%d, quantidade=%d, valor_unitario=%.2f, valor_total_item=%.2f "
-             "WHERE num_item=%d;",
-             item.id_pedido, item.id_produto, item.quantidade, item.valor_unitario, item.valor_total_item, num_item);
-
+    snprintf(query, sizeof(query),
+             "UPDATE itens SET id_pedido=%d, id_produto=%d, quantidade=%d, valor_u>             "WHERE num_item=%d;",
+             item.id_pedido, item.id_produto, item.quantidade, item.valor_unitario>
     PGresult *res = PQexec(conn, query);
 
     if (PQresultStatus(res) != PGRES_COMMAND_OK) {
@@ -84,8 +77,7 @@ void updateItem(PGconn *conn, int num_item, Item item) {
 
 void deleteItem(PGconn *conn, int num_item) {
     char query[256];
-    snprintf(query, sizeof(query), "DELETE FROM itens WHERE num_item=%d;", num_item);
-
+    snprintf(query, sizeof(query), "DELETE FROM itens WHERE num_item=%d;", num_ite>
     PGresult *res = PQexec(conn, query);
 
     if (PQresultStatus(res) != PGRES_COMMAND_OK) {
@@ -106,9 +98,9 @@ void itens_painel() {
     printf(" |_____|  \\__|  \\___| |_| |_| |___/\n");
     printf("                                   \n");
     printf("                                   \n");
-    
+
     PGconn *conn = connectDB();
-    
+
     int escolha;
     Item item;
     int num_item;
@@ -119,7 +111,7 @@ void itens_painel() {
         printf("2. Listar Itens\n");
         printf("3. Atualizar Item\n");
         printf("4. Deletar Item\n");
-        printf("5. Voltar ao menu principal\n");  // Alterado para "Voltar"
+        printf("5. Sair\n");
         printf("Opção: ");
         scanf("%d", &escolha);
 
@@ -165,9 +157,9 @@ void itens_painel() {
                 deleteItem(conn, num_item);
                 break;
             case 5:
-                PQfinish(conn);  // Fecha a conexão com o banco de dados
-                printf("Voltando ao menu principal...\n");
-                return;  // Retorna ao `main`
+                PQfinish(conn);
+                printf("Saindo...\n");
+                return;
             default:
                 printf("Opção inválida!\n");
         }
